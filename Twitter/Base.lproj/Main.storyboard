@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-250" y="96"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="vUI-Pi-tdG">
             <objects>
-                <tableViewController id="CWD-dc-pfC" sceneMemberID="viewController">
+                <tableViewController id="CWD-dc-pfC" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r5I-2J-9yq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,14 @@
                             <outlet property="delegate" destination="CWD-dc-pfC" id="Ngu-PU-rhp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ii8-nh-uDQ"/>
+                    <navigationItem key="navigationItem" title="Home" id="ii8-nh-uDQ">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="kna-iE-q6H">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="CWD-dc-pfC" id="HyQ-NF-4wE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ck-FZ-dbK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,6 +88,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7KZ-ES-9Lh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="CWD-dc-pfC" kind="relationship" relationship="rootViewController" id="KC4-C8-KgF"/>
