@@ -67,13 +67,17 @@ class HomeTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
+        print(tweetArray[indexPath.row])
+        
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Int)
+        
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         
         
         
         return cell
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
